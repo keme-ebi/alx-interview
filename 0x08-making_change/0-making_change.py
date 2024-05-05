@@ -10,6 +10,9 @@ def makeChange(coins, total):
     Return:
         fewest number of coins needed to meet total
     """
+    if (total <= 0):
+        return 0
+
     maxi = total + 1
     table = [total + 1 for i in range(maxi)]
     table[0] = 0
