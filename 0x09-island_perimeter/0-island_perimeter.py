@@ -18,10 +18,10 @@ def island_perimeter(grid):
     """
     direction = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
-    rows = len(grid) # length of a row in the grid
-    columns = len(grid[0]) # length of a column in the grid
+    rows = len(grid)  # length of a row in the grid
+    columns = len(grid[0])  # length of a column in the grid
 
-    perimeter = 0 # total number of perimeter
+    perimeter = 0  # total number of perimeter
 
     for ro in range(rows):
         for col in range(columns):
@@ -30,8 +30,8 @@ def island_perimeter(grid):
 
                 # d_ro = row direction, d_co = column direction
                 for d_ro, d_co in direction:
-                    off_ro = ro + d_ro # offset row
-                    off_co = col + d_co # offset column
+                    off_ro = ro + d_ro  # offset row
+                    off_co = col + d_co  # offset column
 
                     # check if offset is within bounds
                     if 0 <= off_ro < rows and 0 <= off_co < columns:
