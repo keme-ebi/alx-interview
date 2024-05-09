@@ -9,23 +9,20 @@ def island_perimeter(grid):
     Return:
         the perimeter of the island
     """
-    """
-    first two tuple signify rows, last two signify columns
-    will be used as offsets of the grid
-    in computer, y axis decreases upwards and increases downwards
-    x axis increases towards the rigth, and decreases left
-    (up(-y), down(y), left(-x), right(x))
-    """
+    if not grid or not grid[0]:
+        return 0
+
+    # [up(-y), down(y), left(-x), right(x)]
     direction = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
-    rows = len(grid)  # length of a row in the grid
+    rows = len(grid)  # length of rows in the grid
     columns = len(grid[0])  # length of a column in the grid
 
     perimeter = 0  # total number of perimeter
 
     for ro in range(rows):
         for col in range(columns):
-            if grid[ro][col] == 1:
+            if grid[ro][col] >= 1:
                 zeros = 0
 
                 # d_ro = row direction, d_co = column direction
