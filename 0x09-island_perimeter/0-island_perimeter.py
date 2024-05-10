@@ -22,8 +22,8 @@ def island_perimeter(grid):
 
     for ro in range(rows):
         for col in range(columns):
-            if grid[ro][col] >= 1:
-                zeros = 0
+            if grid[ro][col] == 1:
+                peris = 0  # adds up to get total perimeter
 
                 # d_ro = row direction, d_co = column direction
                 for d_ro, d_co in direction:
@@ -34,9 +34,12 @@ def island_perimeter(grid):
                     if 0 <= off_ro < rows and 0 <= off_co < columns:
                         # increment zero if offset of 1 island cell is zero
                         if grid[off_ro][off_co] == 0:
-                            zeros += 1
+                            peris += 1
+                    # if out of bounds
+                    else:
+                        peris += 1
 
-                perimeter += zeros
+                perimeter += peris
 
     # return total perimeter
     return perimeter
