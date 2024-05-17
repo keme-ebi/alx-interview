@@ -35,7 +35,7 @@ def isWinner(x, nums):
     winner = None
 
     # if the array is not empty
-    if nums and x:
+    if nums and x and x > 0:
         for i in range(x):
             primes = soe(nums[i])
             maria = primes[0::2]  # gets primes for maria
