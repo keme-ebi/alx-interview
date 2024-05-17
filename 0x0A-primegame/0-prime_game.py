@@ -37,8 +37,9 @@ def isWinner(x, nums):
     # if the array is not empty
     if nums:
         for i in range(x):
-            maria = soe(nums[i])[0::2]  # gets primes for maria
-            ben = soe(nums[i])[1::2]  # gets primes for ben
+            primes = soe(nums[i])
+            maria = primes[0::2]  # gets primes for maria
+            ben = primes[1::2]  # gets primes for ben
             if len(maria) > len(ben):
                 Maria += 1
             if len(maria) == len(ben):
